@@ -1,0 +1,515 @@
+# ------------------------------------------------------------------------------
+# D&D 5E Fillable Character Sheet - YAML Template
+# ------------------------------------------------------------------------------
+# Configure global typography styling here.
+# Standard built-in PDF fonts:
+#   Helv (Helvetica Regular), HeBo (Helvetica Bold), HeIt (Helvetica Italic), HeBI (Helvetica Bold-Italic)
+#   TiRo (Times Regular), TiBo (Times Bold), TiIt (Times Italic), TiBI (Times Bold-Italic)
+#   Cour (Courier Regular), CoBo (Courier Bold), CoIt (Courier Italic), CoBI (Courier Bold-Italic)
+# ------------------------------------------------------------------------------
+styling:
+  # Symbolic name to register for the embedded font
+  font: "CascadiaMonoNF"
+  # The physical OTF/TTF file path on your system
+  font_file: "/home/erich/.local/share/fonts/CascadiaMonoNF-Regular.otf"
+  font_size: 10
+  # RGB values between 0.0 and 1.0 (e.g., [0.0, 0.0, 0.0] for Black)
+  text_color: [0.0, 0.0, 0.0]
+  # How checked boxes/bubbles are rendered:
+  #   "checkmark" - standard PDF browser/viewer checkmark
+  #   "circle" - perfect solid vector circle drawn over the field
+  fill_checkbox_style: "circle"
+  # Flatten PDF form fields into static vector page content (Draws embedded fonts permanently)
+  #   Set to true for maximum compatibility on mobile/web-browser readers (recommended for Nerd Fonts)
+  flatten_pdf: false
+
+# ------------------------------------------------------------------------------
+# Field Configurations
+# ------------------------------------------------------------------------------
+# You can define a field's value in two ways:
+#
+# 1. Simple value (uses global styling settings):
+#    CharacterName: "Grog Strongjaw"
+#
+# 2. Rich object (overrides global styling for just this field):
+#    CharacterName:
+#      value: "Grog Strongjaw"
+#      font: "HeBI"               # Helvetica Bold-Italic
+#      font_size: 14              # Larger font for the character name
+#      text_color: [0.6, 0.1, 0.1] # Dark red color
+# ------------------------------------------------------------------------------
+
+# Top Header Information
+character_info:
+  CharacterName:
+    value: "Brokkur Stonehelm"
+    font: "HeBo"
+    font_size: 14
+  ClassLevel: "Artificer 4"
+  Background: "Guild Artisan"
+  PlayerName: "Erich"
+  Race: "Dwarf"
+  Alignment: "Chaotic Good"
+  XP: ""
+  ProfBonus: "+2"
+
+# ------------------------------------------------------------------------------
+# Page 2 Character Appearance & Physical Description
+# ------------------------------------------------------------------------------
+character_appearance:
+  CharacterName 2: "Brokkur Stonehelm"
+  # Dwarves considered young until they reach the age of 50. Average life: 350 years.
+  Age: "42"
+  Height: "4'2\""
+  Weight: "150 lbs"
+  Eyes: "Deep Green"
+  Skin: "Ruddy, weathered"
+  Hair: "Brown, braided beard"
+
+# ------------------------------------------------------------------------------
+# Page 2 Background, Allies, and Features
+# ------------------------------------------------------------------------------
+character_backstory_details:
+  Backstory:
+    value: |
+      The Current Quest: Seeking the Forge of Heaven
+      Brokkur has left Windford. He is traveling the world of Abryryim as an adventurer, testing his defensive gadgets in the harshest environments. But his ultimate goal lies back in his homeland.
+      He wants to return to Windford, bypass Lord Grizfane's "unbreachable" vault defenses, and recover his father’s remains. To do that, he needs to build a device capable of withstand the crushing pressure of the flooded vaults. He needs Dark Diamond Ore, and he needs to learn the secrets of the Forge of Heaven to shape it into the ultimate protective suit.
+      He travels with your group not just as a comrade, but as their guardian angel. He watches over them with a hyper-vigilant, protective eye, constantly tinkering, constantly upgrading, ensuring that this time, everyone comes home alive.
+    font: "HeBo"
+    font_size: 6
+
+  Allies:
+    value: |
+      - The Guild of Armorers (Windford)
+    # - Barony of Stonefell
+    # - "Tinker" (Homunculus Servant / Mechanical Owl)
+    font_size: 6
+  # FactionName: "Barony of Stonefell"
+  Feat+Traits:
+    value: |
+      Guild Membership: Guild merchants will support you if you pay your monthly dues of 5 gp.
+      Armor Model (short rest, long rest)
+      Dreadnaught:
+        - Force Demolisher (Simple melee) 1d10 (Force) + INT mod
+          On hit, push or pull target 10 ft (at least one size smaller).
+        - (Bonus Action) Giant Stature ☐ ☐ ☐ ☐
+          for 1 min, reach increases 5 ft and you become Large if you are smaller.
+          number of times equal to INT modifier
+          reset after long reset
+      Guardian:
+        - Thunder Gauntlets (Simple melee) 1d8 (Thunder) + INT mod
+          On hit, the target has disadvantage on attacks against anyone except you.
+        - Distracting Pulse:
+          target disadvantage on attack rolls against targets other than you
+          until start of your next turn
+        - (Bonus Action) Defensive Field
+          temporary HP equal to Artificer level
+      Infiltrator:
+        - Lightning Launcher (Simple ranged) 1d6 (Lightning) + INT mod
+          1d6 lightning (extra 1d6 once per turn on hit), range 90/300.
+        - Powered Steps: speed +5
+        - Dampening Field: advantage DEX (stealth) checks
+    font: "Courier New"
+    font_size: 6
+  Treasure:
+    value: |
+      Bag of Holding:
+        Artisan's Tools (x5)
+        (class) Studded Leather Armor
+    font: "Courier New"
+    font_size: 6
+
+# Main Ability Scores & Modifiers
+abilities:
+  # Mountain Dwarf +2 Strength
+  STR: "15"
+  STRmod: "+2"
+  DEX: "14"
+  DEXmod: "+2"
+  # Dwarf +2 Constitution
+  CON: "18"
+  CONmod: "+4"
+  # +2 Level 4 Ability Score Increase
+  INT: "18"
+  INTmod: "+4"
+  WIS: "14"
+  WISmod: "+2"
+  CHA: "15"
+  CHamod: "+2"
+
+# Saving Throws
+saving_throws:
+  ST Strength:
+    value: "+2"
+    font_size: 6
+  ST Dexterity:
+    value: "+2"
+    font_size: 6
+  ST Constitution:
+    value: "+6"
+    proficient: true
+    font_size: 6
+  ST Intelligence:
+    value: "+6"
+    proficient: true
+    font_size: 6
+  ST Wisdom:
+    value: "+2"
+    font_size: 6
+  ST Charisma:
+    value: "+2"
+    font_size: 6
+
+# Skills
+skills:
+  Acrobatics:
+    value: "+2"
+    font_size: 6
+  Animal:
+    value: "+2"
+    font_size: 6
+  Arcana:
+    value: "+6"
+    proficient: true
+    font_size: 6
+  Athletics:
+    value: "+2"
+    font_size: 6
+  Deception:
+    value: "+2"
+    font_size: 6
+  History:
+    value: "+4"
+    font_size: 6
+  Insight:
+    value: "+6"
+    proficient: true
+    font_size: 6
+  Intimidation:
+    value: "+2"
+    font_size: 6
+  Investigation:
+    value: "+6"
+    proficient: true
+    font_size: 6
+  Medicine:
+    value: "+2"
+    font_size: 6
+  Nature:
+    value: "+4"
+    font_size: 6
+  Perception:
+    value: "+2"
+    font_size: 6
+  Performance:
+    value: "+2"
+    font_size: 6
+  Persuasion:
+    value: "+4"
+    proficient: true
+    font_size: 6
+  Religion:
+    value: "+4"
+    font_size: 6
+  SleightofHand:
+    value: "+2"
+    font_size: 6
+  Stealth:
+    value: "+2"
+    font_size: 6
+  Survival:
+    value: "+2"
+    font_size: 6
+
+# Combat, HP, and Dice
+combat_and_health:
+  AC: "18"
+  Initiative: ""
+  # Dwarves base walking speed 25'
+  Speed: "25"
+  # 1d8 + CON mod per artificer level after 1st
+  # Level 4: (8x4)+(3x4) = 32+12 = 44
+  HPMax: "44"
+  HPCurrent: "44"
+  HPTemp: ""
+  HDTotal: "4d8"
+  HD: "1d8"
+
+# ------------------------------------------------------------------------------
+# Page 1 Attacks & Weapons (Attacks & Spellcasting Box)
+# ------------------------------------------------------------------------------
+attacks_and_weapons:
+  # Row 1
+  Wpn Name:
+    value: "Battleaxe"
+    font_size: 6
+  Wpn1 AtkBonus:
+    value: "+2"
+    font_size: 8
+  Wpn1 Damage:
+    value: "1d8 slash"
+    font_size: 6
+  
+  # Row 2
+  Wpn Name 2:
+    value: "Handaxe (Thrown)"
+    font_size: 6
+  Wpn2 AtkBonus:
+    value: "+2"
+    font_size: 8
+  Wpn2 Damage:
+    value: "1d6+1 slash (20/60)"
+    font_size: 6
+  
+  # Row 3
+  # Wpn Name 3:
+  #   value: "Warhammer"
+  #   font_size: 6
+  # Wpn3 AtkBonus:
+  #   value: "+2"
+  #   font_size: 8
+  # Wpn3 Damage:
+  #   value: "1d8 bludgeoning"
+  #   font_size: 6
+
+  # Large multi-line description text box at the bottom of attacks section
+  AttacksSpellcasting:
+    value: |
+      Force Demolisher          1d10 +4 (Force)
+      Thunder Gauntlets         1d8  +4 (Thunder)
+      Lightning Launcher        1d6  +4 (Lightning)
+                                     +1d6 per turn
+      Cure Wounds               1d8  +6
+      Magic Missile             1d4  +1
+      Thunderwave               2d8
+      Faerie Fire
+      (cantrip) Fire Bolt       1d10
+      (reaction) Shield (+5 AC)
+    font: "Courier New"
+    font_size: 5.5
+
+# Passive Perception
+passive_senses:
+  # Player's Handbook (page 175)
+  # 10 + modifiers apply to check
+  Passive: "12"
+
+# Multi-line Text boxes
+text_boxes:
+  PersonalityTraits:
+    value: "I have a fierce soft spot for anyone working under extreme pressure (miners, divers, laborers), and I will aggressively offer them unsolicited safety inspections."
+    font_size: 6.5
+  Ideals:
+    value: "Preservation: Lives are irreplaceable and sacred; gold, treasure, and stone can always be mined again."
+    font_size: 6.5
+  Bonds:
+    value: "Everything I build is secretly inspired by trying to keep Vara safe; I still carry a piece of the first thermal under-suit I made for her as a good luck charm."
+    font_size: 6.5
+  Flaws:
+    value: "I carry an immense weight of survivor's guilt; I secretly believe my childhood weakness killed my father, and I will risk my own life recklessly to make up for it."
+    font_size: 6.5
+  Features and Traits:
+    value: |
+      Darkvision: dim light 60', dark as if dim
+      Dwarven Resilience (poison):
+        - advantage saving throw
+        - poison dmg resistance
+      Stonecunning: INT (History) 2x proficiency bonus
+      Tinker's Magic: (5' INT mod, long rest)
+        ☐ ☐ ☐ ☐
+        Ball Bearings,    Flask,          Pouch
+        Basket,           Grappling Hook, Rope
+        Bedroll,          Hunting Trap,   Sack
+        Bell,             Jug,            Shovel
+        Blanket,          Lamp,           Spikes (Fe)
+        Block and Tackle, Manacles,       String
+        Bottle (glass),   Net,            Tinderbox
+        Bucket,           Oil,            Torch
+        Caltrops,         Paper,          Vial
+        Candle,           Parchment
+        Crowbar,          Pole
+      Replicate Magic Item: (long rest)
+        ☐ ☐
+        Alchemy Jug,             Bag of Holding,
+        Sending Stones (p274),   Shield +1
+      Bag of Holding:
+        2' diameter, 4' deep
+        up to 500 lbs, up to 64 ft³
+      Alchemy Jug:
+        Acid            8 oz    Oil             1 qt
+        Basic poison  0.5 oz    Vinegar         2 gal
+        Beer            4 gal   Water (fresh)   8 gal
+        Honey           1 gal   Water (salt)   12 gal
+        Mayonnaise      2 gal   Wine            1 gal
+    font: "Courier New"
+    font_size: 5.5
+  Equipment:
+    value: |
+      Battle axe (1d12 slashing)
+      Hand axe (1d6 piercing)
+      Artisan's Tools:
+          Alchemists's supplies
+          Mason's Tools
+          Smith's Tools
+          Thieves' Tools
+          Tinker's Tools
+      Traveler's clothes
+      (background) Letter of introduction from guild
+      (background) Pouch with 15 gp
+      (class) Studded Leather Armor
+      (class) Light crossbow (20 bolts)
+      (class) Dungeoneer's Pack
+      (class) Pouch with 16 gp
+      Mithril Plate Armor (+1 DEX, medium)
+    font: "Courier New"
+    font_size: 5.5
+  ProficienciesLang:
+    value: |
+      Languages: Common, Dwarvish, Goblin (background)
+      Armor: Shields, Light, Medium, Heavy (subclass)
+      Weapons:
+        (class) Simple
+        (race) Battleaxe
+        (race) Handaxe
+        (race) Light hammer
+        (race) Warhammer
+      Tools:
+        (class) Thieves' Tools
+        (class) Tinker's Tools
+        (class) Alchemists's supplies
+        (subclass) Smith's Tools
+        (background) Mason's Tools
+    font: "Courier New"
+    font_size: 5.5
+
+# ------------------------------------------------------------------------------
+# Spellcasting Information (Page 3 Header)
+# ------------------------------------------------------------------------------
+spellcasting_info:
+  Spellcasting Class 2: "Artificer"
+  SpellcastingAbility 2: "INT"
+  # Tasha's Cauldron of Everything (page 12)
+  # 8 + prof bonus + INT mod
+  # Level 4 = 8 + 2 + 4 = 14
+  SpellSaveDC  2: "14"
+  # prof bonus + INT mod
+  # Level 4 = 2 + 4 = 6
+  SpellAtkBonus 2: "6"
+
+# ------------------------------------------------------------------------------
+# Spell Slots & Tracking (Page 3 Header Boxes)
+# ------------------------------------------------------------------------------
+# At 4th Level, an Artificer has exactly 3 Level 1 Spell Slots.
+# ------------------------------------------------------------------------------
+spell_slots:
+  # Level 1 Spell Slots
+  SlotsTotal 19: "3"
+  SlotsRemaining 19: "☐ ☐ ☐"  # Leave blank for physical/manual tracking, or set to slots remaining
+
+  # Level 2 Spell Slots (Unlocked at Level 5)
+  # SlotsTotal 20: "0"
+  # SlotsRemaining 20: ""
+
+# ------------------------------------------------------------------------------
+# Spells & Cantrips List (Page 3 Spells)
+# ------------------------------------------------------------------------------
+# You can define spells as:
+#   - A simple string for unprepared spells/cantrips:
+#     - "Fire Bolt"
+#   - A rich object to denote if a spell is currently prepared (ticking the bubble):
+#     - name: "Cure Wounds"
+#       prepared: true
+# ------------------------------------------------------------------------------
+spells:
+  # Artificer spell list = INT mod + 0.5 x Artificer level
+  #           level 4    =    4    + 2    = 6
+  0: # Cantrips (Level 0) - Max 8 slots
+    - name: "Fire Bolt (1d10, 2d10 @ 5, 3d10 @ 11, 4d10 @ 17)"
+      font_size: 6.5
+    - name: "Guidance (1d4) ability check (C 1m)"
+      font_size: 6.5
+  1: # Level 1 Spells - Max 12 slots
+    # (spell 1)
+    - name: "Cure Wounds (1d8+SPELL) (p230)"
+      prepared: true
+      font_size: 7
+    # (spell 2)
+    - name: "(Reaction) Shield (+5 AC) (p275)"
+      prepared: true
+      font_size: 7.5
+    # (spell 3)
+    - name: "Faerie Fire (C 1m) (p239)"
+      prepared: true
+      font_size: 7.5
+    - name: "  - 20' cube objects outlined blue, green, violet"
+      font_size: 6
+    - name: "  - 10' radius, creatures DEX saving throw, no invisibility"
+      font_size: 6
+    - name: "  - attack rolls have advantage"
+      font_size: 6
+    # (spell 4)
+    - name: "Grease (p246)"
+      prepared: true
+      font_size: 7.5
+    # (spell 5)
+    - name: "Sanctuary (p272)"
+      prepared: true
+      font_size: 7.5
+    # (spell 6)
+    - name: "Detect Magic (p231)"
+      prepared: true
+      font_size: 7.5
+    # (subclass)
+    - name: "Magic Missile (1d4+1) (p257)"
+      prepared: true
+      font_size: 7.5
+    # (subclass)
+    - name: "Thunderwave (2d8) (p282)"
+      prepared: true
+      font_size: 7.5
+    - name: "  - 15' cube CON saving throw, push 10' away"
+      font_size: 6
+  # 2: # Level 2 Spells - Max 12 slots
+  #   - name: "Cure Wounds (4d8+SPELL) (p230)"
+  #     prepared: true
+  #     font_size: 7
+  #   - name: "Enlarge/Reduce (C 1m) (p237)"
+  #     prepared: true
+  #     font_size: 7
+  #   - name: "Magic Missile (2d4+1)"
+  #     prepared: true
+  #     font_size: 7.5
+  #   - name: "Thunderwave (3d8)"
+  #     prepared: true
+  #     font_size: 7.5
+  # 3: # Level 3 Spells - Max 12 slots
+  #   - name: "Cure Wounds (6d8+SPELL)"
+  #     prepared: true
+  #     font_size: 7
+  #   - name: "Magic Missile (3d4+1)"
+  #     prepared: true
+  #     font_size: 7.5
+  #   - name: "Thunderwave (4d8)"
+  #     prepared: true
+  #     font_size: 7.5
+  # 4: # Level 4 Spells - Max 12 slots
+  #   - name: "Cure Wounds (8d8+SPELL)"
+  #     prepared: true
+  #     font_size: 7
+  #   - name: "Magic Missile (4d4+1)"
+  #     prepared: true
+  #     font_size: 7.5
+  #   - name: "Thunderwave (5d8)"
+  #     prepared: true
+  #     font_size: 7.5
+  # 5: # Level 5 Spells - Max 12 slots
+  #   - name: "Cure Wounds (10d8+SPELL)"
+  #     prepared: true
+  #     font_size: 7
+  #   - name: "Magic Missile (5d4+1)"
+  #     prepared: true
+  #     font_size: 7.5
+  #   - name: "Thunderwave (6d8)"
+  #     prepared: true
+  #     font_size: 7.5
