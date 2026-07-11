@@ -1,0 +1,494 @@
+# ------------------------------------------------------------------------------
+# D&D 5E Fillable Character Sheet - YAML Template
+# ------------------------------------------------------------------------------
+# Configure global typography styling here.
+# Standard built-in PDF fonts:
+#   Helv (Helvetica Regular), HeBo (Helvetica Bold), HeIt (Helvetica Italic), HeBI (Helvetica Bold-Italic)
+#   TiRo (Times Regular), TiBo (Times Bold), TiIt (Times Italic), TiBI (Times Bold-Italic)
+#   Cour (Courier Regular), CoBo (Courier Bold), CoIt (Courier Italic), CoBI (Courier Bold-Italic)
+# ------------------------------------------------------------------------------
+styling:
+  # Symbolic name to register for the embedded font
+  font: "CascadiaMonoNF"
+  # The physical OTF/TTF file path on your system
+  font_file: "/home/erich/.local/share/fonts/CascadiaMonoNF-Regular.otf"
+  font_size: 10
+  # RGB values between 0.0 and 1.0 (e.g., [0.0, 0.0, 0.0] for Black)
+  text_color: [0.0, 0.0, 0.0]
+  # How checked boxes/bubbles are rendered:
+  #   "checkmark" - standard PDF browser/viewer checkmark
+  #   "circle" - perfect solid vector circle drawn over the field
+  fill_checkbox_style: "circle"
+  # Flatten PDF form fields into static vector page content (Draws embedded fonts permanently)
+  #   Set to true for maximum compatibility on mobile/web-browser readers (recommended for Nerd Fonts)
+  flatten_pdf: false
+
+# ------------------------------------------------------------------------------
+# Field Configurations
+# ------------------------------------------------------------------------------
+# You can define a field's value in two ways:
+#
+# 1. Simple value (uses global styling settings):
+#    CharacterName: "Grog Strongjaw"
+#
+# 2. Rich object (overrides global styling for just this field):
+#    CharacterName:
+#      value: "Grog Strongjaw"
+#      font: "HeBI"               # Helvetica Bold-Italic
+#      font_size: 14              # Larger font for the character name
+#      text_color: [0.6, 0.1, 0.1] # Dark red color
+# ------------------------------------------------------------------------------
+
+# Top Header Information
+character_info:
+  CharacterName:
+    value: "Eudora Aetherwyn"
+    font: "HeBo"
+    font_size: 14
+  ClassLevel: "Sorcerer 5"
+  Background: "Noble"
+  PlayerName: "Susan"
+  Race: "Human"
+  Alignment: "Chaotic Good"
+  XP: ""
+  ProfBonus: "+3"
+
+# ------------------------------------------------------------------------------
+# Page 2 Character Appearance & Physical Description
+# ------------------------------------------------------------------------------
+character_appearance:
+  CharacterName 2: "Eudora Aetherwyn"
+  Age: "22"
+  Height: "5'5"
+  Weight: "Rude"
+  Eyes: "Brown"
+  Skin: "Pale"
+  Hair: "Rainbow"
+
+# ------------------------------------------------------------------------------
+# Page 2 Background, Allies, and Features
+# ------------------------------------------------------------------------------
+character_backstory_details:
+  Backstory:
+    value: |
+      The Current Quest: Seeking the Rod of Saint Fe'tuth
+      
+    font: "HeBo"
+    font_size: 6
+
+  Allies:
+    value: |
+      House Aetherwyn
+      Sigil: A silver star suspended within a ring of seven arcane circles.
+      Motto: "Power Shapes Destiny."
+      House Aetherwyn is one of the most respected magical families in Windmire. Though not among the Seven Noble Houses, their influence reaches every corner of Windmire. They
+      provide magical services, enchantments, wards, and arcane expertise to the city's great houses while pursuing a long-standing ambition: to one day secure a place among them. For
+      generations House Aetherwyn has believed they are only one marriage, one alliance, or one extraordinary achievement away from joining the Council of Tides.
+    font_size: 6
+  Feat+Traits:
+    value: |
+      
+    font: "Courier New"
+    font_size: 6
+  Treasure:
+    value: |
+      Pearl of Power (attunement)
+        While this pearl is on your person, you can use an action to speak its command word and regain one expended spell slot. If the expended slot is of 4th level or higher, the new slot is 3rd level. Once you have used the pearl, it can't be used again until the next dawn.
+      Ring of Evasion (attunement)
+        This ring has 3 charges, and it regains 1d3 expended charges daily at dawn. When you fail a Dexterity saving throw while wearing it, you can use your reaction to expend 1 of its charges to succeed on that saving throw instead.
+      
+    font: "Courier New"
+    font_size: 6
+
+# Main Ability Scores & Modifiers
+# 13,  15,  9,   13,  13,  16
+# INT, CON, DEX, WIS, STR, CHA
+abilities:
+  # Human +1 on all ability scores
+  CON: "16"
+  CONmod: "+3"
+  INT: "18"
+  INTmod: "+4"
+  DEX: "10"
+  DEXmod: "+0"
+  WIS: "14"
+  WISmod: "+2"
+  STR: "14"
+  STRmod: "+2"
+  CHA: "19"
+  CHamod: "+4"
+  # +2 Level 4 Ability Score Increase
+
+# Saving Throws
+saving_throws:
+  ST Strength:
+    value: "+2"
+    font_size: 6
+  ST Dexterity:
+    value: "+0"
+    font_size: 6
+  ST Constitution:
+    value: "+6"
+    proficient: true
+    font_size: 6
+  ST Intelligence:
+    value: "+2"
+    font_size: 6
+  ST Wisdom:
+    value: "+2"
+    font_size: 6
+  ST Charisma:
+    value: "+7"
+    proficient: true
+    font_size: 6
+
+# Skills
+skills:
+  Acrobatics:
+    value: "+0"
+    font_size: 6
+  Animal:
+    value: "+2"
+    font_size: 6
+  Arcana:
+    value: "+5"
+    proficient: true
+    font_size: 6
+  Athletics:
+    value: "+2"
+    font_size: 6
+  Deception:
+    value: "+2"
+    font_size: 6
+  History:
+    value: "+5"
+    proficient: true
+    font_size: 6
+  Insight:
+    value: "+5"
+    proficient: true
+    font_size: 6
+  Intimidation:
+    value: "+4"
+    font_size: 6
+  Investigation:
+    value: "+2"
+    proficient: true
+    font_size: 6
+  Medicine:
+    value: "+2"
+    font_size: 6
+  Nature:
+    value: "+2"
+    font_size: 6
+  Perception:
+    value: "+2"
+    font_size: 6
+  Performance:
+    value: "+4"
+    font_size: 6
+  Persuasion:
+    value: "+7"
+    proficient: true
+    font_size: 6
+  Religion:
+    value: "+2"
+    font_size: 6
+  SleightofHand:
+    value: "+0"
+    font_size: 6
+  Stealth:
+    value: "+0"
+    font_size: 6
+  Survival:
+    value: "+2"
+    font_size: 6
+
+# Combat, HP, and Dice
+combat_and_health:
+  AC: "10"
+  Initiative: "+0"
+  # Humans base walking speed 30'
+  Speed: "30"
+  # Hit Points 1st level: 6 + CON mod
+  # Hit Points at Higher Levels: 1d6 (or 4) + CON mod per sorcer level after first
+  # 9+(7x4) = 37
+  HPMax: "37"
+  HPCurrent: "37"
+  HPTemp: ""
+  HDTotal: "5d6"
+  HD: "1d6"
+
+# ------------------------------------------------------------------------------
+# Page 1 Attacks & Weapons (Attacks & Spellcasting Box)
+# ------------------------------------------------------------------------------
+attacks_and_weapons:
+  # Row 1
+  Wpn Name:
+    value: "Crossbow, light"
+    font_size: 6
+  Wpn1 AtkBonus:
+    value: "+2"
+    font_size: 8
+  Wpn1 Damage:
+    value: "1d8, piercing, loading, 2-handed (80/320 range)"
+    font_size: 6
+  
+  # Row 2
+  Wpn Name 2:
+    value: "Dagger"
+    font_size: 6
+  Wpn2 AtkBonus:
+    value: "+2"
+    font_size: 8
+  Wpn2 Damage:
+    value: "1d4, piercing, finesse, light, thrown (20/60 range)"
+    font_size: 6
+  
+  # Row 3
+  Wpn Name 3:
+    value: "Unarmed Strike"
+    font_size: 6
+  Wpn3 AtkBonus:
+    value: "+5"
+    font_size: 8
+  Wpn3 Damage:
+    value: "3, bludgeoning"
+    font_size: 6
+
+  # Large multi-line description text box at the bottom of attacks section
+  AttacksSpellcasting:
+    value: |
+      Fire Bolt (cantrip - p242)       2d10 +7  (Fire)
+      Ray of Frost (cantrip - p271)    2d8  +7  (Cold)
+      Shocking Grasp (cantrip - p275)  2d8  +7  (Lightning)
+      Magic Missile (lvl 1 - p257)     3x1d4+1  (Force)
+      
+    font: "Courier New"
+    font_size: 5.5
+
+# Passive Perception
+passive_senses:
+  # Player's Handbook (page 175)
+  # 10 + WIS modifiers apply to check
+  Passive: "12"
+
+# Multi-line Text boxes
+text_boxes:
+  PersonalityTraits:
+    value: "I collect stories, not accomplishments, and I can usually find something exciting in the worst situations."
+    font_size: 6.5
+  Ideals:
+    value: "People shouldn't be judged by how well they fit expectations."
+    font_size: 6.5
+  Bonds:
+    value: "My brother, Ashur, believes I'm destined for great things and I never want to prove him wrong."
+    font_size: 6.5
+  Flaws:
+    value: "By my words and actions, I often bring shame to my family. I hide my insecurities behind jokes and confidence."
+    font_size: 6.5
+  Features and Traits:
+    value: |
+      Font of Magic (p101)
+      You have 5 sorcery points. You regain all spent sorcery points when you finish a long rest. You can use your sorcery points to gain additional spell slots, or sacrifice spell slots to gain additional sorcery points. 
+      You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. Any spell slot you create with this feature vanishes when you finish a long rest. The conversion is as follows:  
+      • Spell Slot Level 1  | 2 Sorcery Points
+      • Spell Slot Level 2  | 3 Sorcery Points
+      • Spell Slot Level 3  | 5 Sorcery Points
+      • Spell Slot Level 4  | 6 Sorcery Points
+      • Spell Slot Level 5  | 7 Sorcery Points
+      As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot's level.
+
+      Metamagic (p101) 
+      You can alter spells to suit your needs; you know 2 Metamagic options which can be used to temporarily modify spells you cast. 
+        Distant Spell (p102) When you cast a spell with a range of at least 5 ft., you can spend 1 Sorcery Point to double its range. Or when you cast a spell that has a range of Touch, you can spend 1 Sorcery Point to make the spell’s range 30 ft. 
+        Quickened Spell (p102) When you cast a spell with a casting time of an action, you can spend 2 Sorcery Points to change the casting time to a Bonus Action for this casting. You can’t modify a spell in this way if you’ve already cast a level 1+ spell on the current turn, nor can you cast a level 1+ spell on the current turn after modifying a spell in this way. 
+      
+      Wild Magic Surge (p103)
+      Once per turn, you can roll 1d20 immediately after casting a Sorcerer spell with a spell slot. If you roll a 1, roll on the Wild Magic Surge table to create a magical effect. If the magical effect is a spell, it’s too wild to be affected by your Metamagic.
+
+      Tides of Chaos (p103) 
+      You can give yourself Advantage on one attack roll, ability check, or saving throw before you roll the d20. Once used, ToC remains expended until you to roll on the Wild Magic Surge table, which instantly recharges ToC or after a long rest, whichever comes first.
+
+    font: "Courier New"
+    font_size: 5.5
+  Equipment:
+    value: |
+      Pearl of Power
+      Ring of Evasion
+      Crystal necklace (arcane focus)
+      Dagger (x2)
+      Crossbow, light
+      Light crossbow (20 bolts)
+      Fine clothes
+      Scroll of pedigree
+      Pouch with 25 gp
+      Signet Ring
+      Explorers's Pack
+        Backpack
+        Bedroll
+        Mess Kit
+        Rations (10 days)
+        Rope, hempen (50 feature)
+        Tinderbox
+        Torch (x10)
+        Waterskin
+
+      
+    font: "Courier New"
+    font_size: 5.5
+  ProficienciesLang:
+    value: |
+      Languages: Common, Elvish, Dwarvish
+      Armor: None
+      Weapons: daggers, darts, slings, quarterstaff, light crossbow
+      Tools: Dice Set
+    font: "Courier New"
+    font_size: 5.5
+
+# ------------------------------------------------------------------------------
+# Spellcasting Information (Page 3 Header)
+# ------------------------------------------------------------------------------
+spellcasting_info:
+  Spellcasting Class 2: "Sorcerer"
+  SpellcastingAbility 2: "CHA"
+  # PHB-101
+  # 8 + prof bonus + CHA mod
+  # Level 5 = 8 + 3 + 4 = 15
+  SpellSaveDC  2: "15"
+  # prof bonus + CHA mod
+  # Level 5 = 3 + 4 = 7
+  SpellAtkBonus 2: "+7"
+
+# ------------------------------------------------------------------------------
+# Spell Slots & Tracking (Page 3 Header Boxes)
+# ------------------------------------------------------------------------------
+# At 5th Level, a Sorcerer has 5 cantrips, 6 known spells: 4 Level 1 Spell Slots, 3 Level 2 Spell Slots, and 2 Level 3 Spell Slots.
+# ------------------------------------------------------------------------------
+spell_slots:
+  # Level 1 Spell Slots
+  SlotsTotal 19: "4"
+  SlotsRemaining 19: "☐ ☐ ☐ ☐"  # Leave blank for physical/manual tracking, or set to slots remaining
+
+  # Level 2 Spell Slots
+  SlotsTotal 20: "3"
+  SlotsRemaining 20: "☐ ☐ ☐"
+
+  # Level 3 Spell Slots
+  SlotsTotal 21: "2"
+  SlotsRemaining 21: "☐ ☐"
+
+# ------------------------------------------------------------------------------
+# Spells & Cantrips List (Page 3 Spells)
+# ------------------------------------------------------------------------------
+# You can define spells as:
+#   - A simple string for unprepared spells/cantrips:
+#     - "Fire Bolt"
+#   - A rich object to denote if a spell is currently prepared (ticking the bubble):
+#     - name: "Cure Wounds"
+#       prepared: true
+# ------------------------------------------------------------------------------
+spells:
+  # Artificer spell list = INT mod + 0.5 x Artificer level
+  #           level 5    =    4    + 2    = 6
+  0: # Cantrips (Level 0) - Max 8 slots
+    - name: "Fire Bolt (p242)"
+      font_size: 6.5
+    - name: "Light (p255)"
+      font_size: 6.5
+    - name: "Prestidigitation (p267)"
+      font_size: 6.5
+    - name: "Ray of Frost (p271)"
+      font_size: 6.5
+    - name: "Shocking Grasp (p275)"
+      font_size: 6.5
+  1: # Level 1 Spells - Max 12 slots
+    # (spell 1)
+    - name: "Detect Thoughts (p231/233)"
+      prepared: true
+      font_size: 7.5
+   # (spell 2)
+    - name: "Mage Armor (p256)"
+      prepared: true
+      font_size: 7.5
+    # (spell 3)
+    - name: "Magic Missile (p257)"
+      prepared: true
+      font_size: 7.5
+  
+  
+    #- name: "  - 20' cube objects outlined blue, green, violet"
+    #  font_size: 6
+    #- name: "  - 10' radius, creatures DEX saving throw, no invisibility"
+    #  font_size: 6
+    #- name: "  - attack rolls have advantage"
+    #  font_size: 6
+    # (spell 4)
+    #- name: "Grease (p246)"
+    #  font_size: 7.5
+    # (spell 5)
+    #- name: "Sanctuary (p272)"
+    #  font_size: 7.5
+    # (spell 6)
+    #- name: "Detect Magic (p231)"
+    #  font_size: 7.5
+    # (subclass)
+    #- name: "Magic Missile (1d4+1) (p257)"
+    #  prepared: true
+    #  font_size: 7.5
+    # (subclass)
+    #- name: "Thunderwave (2d8) (p282)"
+    #  prepared: true
+    #  font_size: 7.5
+    #- name: "  - 15' cube CON saving throw, push 10' away"
+    #  font_size: 6
+  2: # Level 2 Spells - Max 12 slots
+    - name: "Invisibility (p254)"
+      prepared: true
+      font_size: 7.5
+      # (spell 7)
+    - name: "Misty Step (p260/261)"
+      prepared: true
+      font_size: 7.5
+    #- name: "Magic Missile (2d4+1) (p257)"
+    #  prepared: true
+    #  font_size: 7.
+    #- name: "Thunderwave (3d8) (p282)"
+    #  prepared: true
+    #  font_size: 7.5
+    #- name: "Mirror Image (3d8) (p260)"
+    #  prepared: true
+    #  font_size: 7.5
+    #- name: "Shatter (3d8) (p275)"
+    #  prepared: true
+    #  font_size: 7.5
+  3: # Level 3 Spells - Max 12 slots
+    - name: "Counterspell (p228)"
+      prepared: true
+      font_size: 7.5
+  #   - name: "Magic Missile (3d4+1)"
+  #     prepared: true
+  #     font_size: 7.5
+  #   - name: "Thunderwave (4d8)"
+  #     prepared: true
+  #     font_size: 7.5
+  # 4: # Level 4 Spells - Max 12 slots
+  #   - name: "Cure Wounds (8d8+SPELL)"
+  #     prepared: true
+  #     font_size: 7
+  #   - name: "Magic Missile (4d4+1)"
+  #     prepared: true
+  #     font_size: 7.5
+  #   - name: "Thunderwave (5d8)"
+  #     prepared: true
+  #     font_size: 7.5
+  # 5: # Level 5 Spells - Max 12 slots
+  #   - name: "Cure Wounds (10d8+SPELL)"
+  #     prepared: true
+  #     font_size: 7
+  #   - name: "Magic Missile (5d4+1)"
+  #     prepared: true
+  #     font_size: 7.5
+  #   - name: "Thunderwave (6d8)"
+  #     prepared: true
+  #     font_size: 7.5
