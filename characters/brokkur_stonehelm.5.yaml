@@ -59,7 +59,7 @@ character_info:
 character_appearance:
   CharacterName 2: "Brokkur Stonehelm"
   # Dwarves considered young until they reach the age of 50. Average life: 350 years.
-  Age: "42"
+  Age: "84"
   Height: "4'2\""
   Weight: "150 lbs"
   Eyes: "Deep Green"
@@ -227,15 +227,17 @@ skills:
 # Combat, HP, and Dice
 combat_and_health:
   AC: "18"
-  Initiative: ""
+  Initiative: "+2"
   # Dwarves base walking speed 25'
   Speed: "25"
-  # 1d8 + CON mod per artificer level after 1st
-  # Level 4: (8x4)+(3x4) = 32+12 = 44
-  HPMax: "44"
-  HPCurrent: "44"
+  #           1d8 + CON mod per artificer level after 1st
+  # Level 1: (  8 + 4  )        = 12
+  # Level 5: (  5 + 4  )  x  4  = 36 +
+  #                             = 48
+  HPMax: "48"
+  HPCurrent: "48"
   HPTemp: ""
-  HDTotal: "4d8"
+  HDTotal: "5d8"
   HD: "1d8"
 
 # ------------------------------------------------------------------------------
@@ -393,11 +395,11 @@ spellcasting_info:
   Spellcasting Class 2: "Artificer"
   SpellcastingAbility 2: "INT"
   # Tasha's Cauldron of Everything (page 12)
-  # 8 + prof bonus + INT mod
-  # Level 4 = 8 + 3 + 4 = 14
+  #           8 + prof bonus + INT mod
+  # Level 5 = 8 +     3      + 4       = 15
   SpellSaveDC  2: "15"
-  # prof bonus + INT mod
-  # Level 4 = 3 + 4 = 6
+  #           prof bonus + INT mod
+  # Level 5 =     3      + 4       = 7
   SpellAtkBonus 2: "7"
 
 # ------------------------------------------------------------------------------
