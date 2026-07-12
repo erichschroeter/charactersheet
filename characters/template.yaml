@@ -38,8 +38,36 @@ styling:
 #      font_size: 14              # Larger font for the character name
 #      text_color: [0.6, 0.1, 0.1] # Dark red color
 # ------------------------------------------------------------------------------
+#
+# ------------------------------------------------------------------------------
+# Page 1
+# ------------------------------------------------------------------------------
+# ┌────────────────────────────────────┐   ┌────┬────────────────────────────────────────────────────┐
+# │              ┌────────────────────┐│   │ ID │                        YAML                        │
+# │              │         1          ││   ├────┼────────────────────────────────────────────────────┤
+# │              └────────────────────┘│   │  1 │ character_info                                     │
+# │┌───┐┌─────┐┌──────────┐┌──────────┐│   │  2 │ abilities                                          │
+# ││   ││     ││          ││          ││   │  3 │ saving_throws                                      │
+# ││   ││     ││          ││          ││   │    │ skills                                             │
+# ││   ││     ││    4     ││    5     ││   │  4 │ combat_and_health                                  │
+# ││   ││     ││          ││          ││   │  5 │ text_boxes.PersonalityTraits                       │
+# ││   ││     │└──────────┘└──────────┘│   │    │ text_boxes.Ideals                                  │
+# ││ 2 ││  3  │┌──────────┐┌──────────┐│   │    │ text_boxes.Bonds                                   │
+# ││   ││     ││          ││          ││   │    │ text_boxes.Flaws                                   │
+# ││   ││     ││          ││          ││   │  6 │ attacks_and_weapons                                │
+# ││   ││     ││    6     ││    7     ││   │  7 │ text_boxes.Features and Traits                     │
+# ││   ││     ││          ││          ││   │  8 │ text_boxes.ProficienciesLang                       │
+# │└───┘└─────┘└──────────┘│          ││   │  9 │ text_boxes.Equipment                               │
+# │┌──────────┐┌──────────┐│          ││   └────┴────────────────────────────────────────────────────┘
+# ││          ││          ││          ││
+# ││    8     ││    9     ││          ││
+# ││          ││          ││          ││
+# │└──────────┘└──────────┘└──────────┘│
+# └────────────────────────────────────┘
+#
+# ------------------------------------------------------------------------------
+#
 
-# Top Header Information
 character_info:
   CharacterName:
     value: "Brokkur Stonehelm"
@@ -53,74 +81,7 @@ character_info:
   XP: ""
   ProfBonus: "+2"
 
-# ------------------------------------------------------------------------------
-# Page 2 Character Appearance & Physical Description
-# ------------------------------------------------------------------------------
-character_appearance:
-  CharacterName 2: "Brokkur Stonehelm"
-  # Dwarves considered young until they reach the age of 50. Average life: 350 years.
-  Age: "42"
-  Height: "4'2\""
-  Weight: "150 lbs"
-  Eyes: "Deep Green"
-  Skin: "Ruddy, weathered"
-  Hair: "Brown, braided beard"
 
-# ------------------------------------------------------------------------------
-# Page 2 Background, Allies, and Features
-# ------------------------------------------------------------------------------
-character_backstory_details:
-  Backstory:
-    value: |
-      The Current Quest: Seeking the Forge of Heaven
-      Brokkur has left Windford. He is traveling the world of Abryryim as an adventurer, testing his defensive gadgets in the harshest environments. But his ultimate goal lies back in his homeland.
-      He wants to return to Windford, bypass Lord Grizfane's "unbreachable" vault defenses, and recover his father’s remains. To do that, he needs to build a device capable of withstand the crushing pressure of the flooded vaults. He needs Dark Diamond Ore, and he needs to learn the secrets of the Forge of Heaven to shape it into the ultimate protective suit.
-      He travels with your group not just as a comrade, but as their guardian angel. He watches over them with a hyper-vigilant, protective eye, constantly tinkering, constantly upgrading, ensuring that this time, everyone comes home alive.
-    font: "HeBo"
-    font_size: 6
-
-  Allies:
-    value: |
-      - The Guild of Armorers (Windford)
-    # - Barony of Stonefell
-    # - "Tinker" (Homunculus Servant / Mechanical Owl)
-    font_size: 6
-  # FactionName: "Barony of Stonefell"
-  Feat+Traits:
-    value: |
-      Guild Membership: Guild merchants will support you if you pay your monthly dues of 5 gp.
-      Armor Model (short rest, long rest)
-      Dreadnaught:
-        - Force Demolisher (Simple melee) 1d10 (Force) + INT mod
-          On hit, push or pull target 10 ft (at least one size smaller).
-        - (Bonus Action) Giant Stature ☐ ☐ ☐ ☐
-          for 1 min, reach increases 5 ft and you become Large if you are smaller.
-          number of times equal to INT modifier
-          reset after long reset
-      Guardian:
-        - Thunder Gauntlets (Simple melee) 1d8 (Thunder) + INT mod
-          On hit, the target has disadvantage on attacks against anyone except you.
-        - Distracting Pulse:
-          target disadvantage on attack rolls against targets other than you
-          until start of your next turn
-        - (Bonus Action) Defensive Field
-          temporary HP equal to Artificer level
-      Infiltrator:
-        - Lightning Launcher (Simple ranged) 1d6 (Lightning) + INT mod
-          1d6 lightning (extra 1d6 once per turn on hit), range 90/300.
-        - Powered Steps: speed +5
-        - Dampening Field: advantage DEX (stealth) checks
-    font: "Courier New"
-    font_size: 6
-  Treasure:
-    value: |
-      Bag of Holding:
-        Artisan's Tools (x5)
-        (class) Studded Leather Armor
-    font: "Courier New"
-    font_size: 6
-
-# Main Ability Scores & Modifiers
 abilities:
   # Mountain Dwarf +2 Strength
   STR: "15"
@@ -138,7 +99,6 @@ abilities:
   CHA: "15"
   CHamod: "+2"
 
-# Saving Throws
 saving_throws:
   ST Strength:
     value: "+2"
@@ -161,7 +121,6 @@ saving_throws:
     value: "+2"
     font_size: 6
 
-# Skills
 skills:
   Acrobatics:
     value: "+2"
@@ -222,10 +181,9 @@ skills:
     value: "+2"
     font_size: 6
 
-# Combat, HP, and Dice
 combat_and_health:
   AC: "18"
-  Initiative: ""
+  Initiative: "+2"
   # Dwarves base walking speed 25'
   Speed: "25"
   # 1d8 + CON mod per artificer level after 1st
@@ -236,9 +194,6 @@ combat_and_health:
   HDTotal: "4d8"
   HD: "1d8"
 
-# ------------------------------------------------------------------------------
-# Page 1 Attacks & Weapons (Attacks & Spellcasting Box)
-# ------------------------------------------------------------------------------
 attacks_and_weapons:
   # Row 1
   Wpn Name:
@@ -383,9 +338,133 @@ text_boxes:
     font: "Courier New"
     font_size: 5.5
 
+
 # ------------------------------------------------------------------------------
-# Spellcasting Information (Page 3 Header)
+# Page 2
 # ------------------------------------------------------------------------------
+# ┌────────────────────────────────────┐   ┌────┬─────────────────────────────────────────┐
+# │               ┌───────────────────┐│   │ ID │                  YAML                   │
+# │               │         1         ││   ├────┼─────────────────────────────────────────┤
+# │               └───────────────────┘│   │  1 │ character_appearance                    │
+# │┌──────────┐┌──────────────────────┐│   │  2 │ Appearance (not supported yet)          │
+# ││          ││              ┌──────┐││   │  3 │ character_backstory_details Allies      │
+# ││          ││              │      │││   │  4 │ Symbol (not supported yet)              │
+# ││    2     ││      3       │  4   │││   │  5 │ character_backstory_details Backstory   │
+# ││          ││              └──────┘││   │  6 │ character_backstory_details Feat+Traits │
+# ││          ││                      ││   │  7 │ character_backstory_details Treasure    │
+# │└──────────┘└──────────────────────┘│   └────┴─────────────────────────────────────────┘
+# │┌──────────┐┌──────────────────────┐│
+# ││          ││                      ││
+# ││          ││                      ││
+# ││          ││            6         ││
+# ││          ││                      ││
+# ││          │└──────────────────────┘│
+# ││    5     │┌──────────────────────┐│
+# ││          ││                      ││
+# ││          ││                      ││
+# ││          ││            7         ││
+# ││          ││                      ││
+# │└──────────┘└──────────────────────┘│
+# └────────────────────────────────────┘
+#
+# ------------------------------------------------------------------------------
+
+character_appearance:
+  CharacterName 2: "Brokkur Stonehelm"
+  # Dwarves considered young until they reach the age of 50. Average life: 350 years.
+  Age: "42"
+  Height: "4'2\""
+  Weight: "150 lbs"
+  Eyes: "Deep Green"
+  Skin: "Ruddy, weathered"
+  Hair: "Brown, braided beard"
+
+character_backstory_details:
+  Backstory:
+    value: |
+      The Current Quest: Seeking the Forge of Heaven
+      Brokkur has left Windford. He is traveling the world of Abryryim as an adventurer, testing his defensive gadgets in the harshest environments. But his ultimate goal lies back in his homeland.
+      He wants to return to Windford, bypass Lord Grizfane's "unbreachable" vault defenses, and recover his father’s remains. To do that, he needs to build a device capable of withstand the crushing pressure of the flooded vaults. He needs Dark Diamond Ore, and he needs to learn the secrets of the Forge of Heaven to shape it into the ultimate protective suit.
+      He travels with your group not just as a comrade, but as their guardian angel. He watches over them with a hyper-vigilant, protective eye, constantly tinkering, constantly upgrading, ensuring that this time, everyone comes home alive.
+    font: "HeBo"
+    font_size: 6
+
+  Allies:
+    value: |
+      - The Guild of Armorers (Windford)
+    # - Barony of Stonefell
+    # - "Tinker" (Homunculus Servant / Mechanical Owl)
+    font_size: 6
+  # FactionName: "Barony of Stonefell"
+  Feat+Traits:
+    value: |
+      Guild Membership: Guild merchants will support you if you pay your monthly dues of 5 gp.
+      Armor Model (short rest, long rest)
+      Dreadnaught:
+        - Force Demolisher (Simple melee) 1d10 (Force) + INT mod
+          On hit, push or pull target 10 ft (at least one size smaller).
+        - (Bonus Action) Giant Stature ☐ ☐ ☐ ☐
+          for 1 min, reach increases 5 ft and you become Large if you are smaller.
+          number of times equal to INT modifier
+          reset after long reset
+      Guardian:
+        - Thunder Gauntlets (Simple melee) 1d8 (Thunder) + INT mod
+          On hit, the target has disadvantage on attacks against anyone except you.
+        - Distracting Pulse:
+          target disadvantage on attack rolls against targets other than you
+          until start of your next turn
+        - (Bonus Action) Defensive Field
+          temporary HP equal to Artificer level
+      Infiltrator:
+        - Lightning Launcher (Simple ranged) 1d6 (Lightning) + INT mod
+          1d6 lightning (extra 1d6 once per turn on hit), range 90/300.
+        - Powered Steps: speed +5
+        - Dampening Field: advantage DEX (stealth) checks
+    font: "Courier New"
+    font_size: 6
+  Treasure:
+    value: |
+      Bag of Holding:
+        Artisan's Tools (x5)
+        (class) Studded Leather Armor
+    font: "Courier New"
+    font_size: 6
+
+
+# ------------------------------------------------------------------------------
+# Page 3
+# ------------------------------------------------------------------------------
+# ┌────────────────────────────────────┐   ┌────┬───────────────────┐
+# │               ┌───────────────────┐│   │ ID │       YAML        │
+# │               │         1         ││   ├────┼───────────────────┤
+# │               └───────────────────┘│   │  1 │ spellcasting_info │
+# │┌──────────┐┌──────────┐┌──────────┐│   │  2 │ spell_slots.0     │
+# ││          ││          ││          ││   │  3 │ spell_slots.1     │
+# ││          ││          ││          ││   │  4 │ spell_slots.2     │
+# ││    2     ││    3     ││    4     ││   │  5 │ spell_slots.3     │
+# ││          ││          ││          ││   │  6 │ spell_slots.4     │
+# │└──────────┘│          │└──────────┘│   │  7 │ spell_slots.5     │
+# │┌──────────┐│          │┌──────────┐│   │  8 │ spell_slots.6     │
+# ││          │└──────────┘│          ││   │  9 │ spell_slots.7     │
+# ││          │┌──────────┐│          ││   │ 10 │ spell_slots.8     │
+# ││          ││          ││    7     ││   │ 11 │ spell_slots.9     │
+# ││    5     ││          ││          ││   └────┴───────────────────┘
+# ││          ││          │└──────────┘│
+# ││          ││    6     │┌──────────┐│
+# │└──────────┘│          ││          ││
+# │┌──────────┐│          ││    10    ││
+# ││          │└──────────┘│          ││
+# ││          │┌──────────┐└──────────┘│
+# ││          ││          │┌──────────┐│
+# ││    8     ││          ││          ││
+# ││          ││    9     ││          ││
+# ││          ││          ││    11    ││
+# ││          ││          ││          ││
+# │└──────────┘└──────────┘└──────────┘│
+# └────────────────────────────────────┘
+#
+# ------------------------------------------------------------------------------
+
 spellcasting_info:
   Spellcasting Class 2: "Artificer"
   SpellcastingAbility 2: "INT"
@@ -397,11 +476,6 @@ spellcasting_info:
   # Level 4 = 2 + 4 = 6
   SpellAtkBonus 2: "6"
 
-# ------------------------------------------------------------------------------
-# Spell Slots & Tracking (Page 3 Header Boxes)
-# ------------------------------------------------------------------------------
-# At 4th Level, an Artificer has exactly 3 Level 1 Spell Slots.
-# ------------------------------------------------------------------------------
 spell_slots:
   # Level 1 Spell Slots
   SlotsTotal 19: "3"
@@ -410,6 +484,18 @@ spell_slots:
   # Level 2 Spell Slots (Unlocked at Level 5)
   # SlotsTotal 20: "0"
   # SlotsRemaining 20: ""
+
+  # Level 3 Spell Slots (Unlocked at Level 9)
+  # SlotsTotal 21: "0"
+  # SlotsRemaining 21: ""
+
+  # Level 4 Spell Slots (Unlocked at Level 13)
+  # SlotsTotal 22: "0"
+  # SlotsRemaining 22: ""
+
+  # Level 5 Spell Slots (Unlocked at Level 17)
+  # SlotsTotal 23: "0"
+  # SlotsRemaining 23: ""
 
 # ------------------------------------------------------------------------------
 # Spells & Cantrips List (Page 3 Spells)
@@ -471,45 +557,15 @@ spells:
     - name: "  - 15' cube CON saving throw, push 10' away"
       font_size: 6
   # 2: # Level 2 Spells - Max 12 slots
-  #   - name: "Cure Wounds (4d8+SPELL) (p230)"
-  #     prepared: true
-  #     font_size: 7
-  #   - name: "Enlarge/Reduce (C 1m) (p237)"
-  #     prepared: true
-  #     font_size: 7
-  #   - name: "Magic Missile (2d4+1)"
-  #     prepared: true
-  #     font_size: 7.5
-  #   - name: "Thunderwave (3d8)"
-  #     prepared: true
+  #   - name: ""
   #     font_size: 7.5
   # 3: # Level 3 Spells - Max 12 slots
-  #   - name: "Cure Wounds (6d8+SPELL)"
-  #     prepared: true
-  #     font_size: 7
-  #   - name: "Magic Missile (3d4+1)"
-  #     prepared: true
-  #     font_size: 7.5
-  #   - name: "Thunderwave (4d8)"
-  #     prepared: true
+  #   - name: ""
   #     font_size: 7.5
   # 4: # Level 4 Spells - Max 12 slots
-  #   - name: "Cure Wounds (8d8+SPELL)"
-  #     prepared: true
-  #     font_size: 7
-  #   - name: "Magic Missile (4d4+1)"
-  #     prepared: true
-  #     font_size: 7.5
-  #   - name: "Thunderwave (5d8)"
-  #     prepared: true
+  #   - name: ""
   #     font_size: 7.5
   # 5: # Level 5 Spells - Max 12 slots
-  #   - name: "Cure Wounds (10d8+SPELL)"
-  #     prepared: true
-  #     font_size: 7
-  #   - name: "Magic Missile (5d4+1)"
-  #     prepared: true
+  #   - name: ""
   #     font_size: 7.5
-  #   - name: "Thunderwave (6d8)"
-  #     prepared: true
-  #     font_size: 7.5
+
