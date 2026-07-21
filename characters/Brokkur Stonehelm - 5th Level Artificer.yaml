@@ -74,30 +74,27 @@ character_info:
     font: "HeBo"
     font_size: 14
   ClassLevel: "Artificer 5"
-  Background: "Guild Artisan"
+  Background: "Artisan"
   PlayerName: "Erich"
   Race: "Dwarf"
   Alignment: "Chaotic Good"
   XP: ""
   ProfBonus: "+3"
 
-# 16,  16,  14,  14,  13,  15
-# INT, CON, DEX, WIS, STR, CHA
+# 13,  15,  16,  16,  14,  14
+# STR, DEX, CON, INT, WIS, CHA
 abilities:
-  # Dwarf +2 Constitution
-  CON: "18"
-  CONmod: "+4"
-  # +2 Level 4 Ability Score Increase
-  INT: "18"
+  STR: "14"       # background +1
+  STRmod: "+2"
+  DEX: "16"       # background +1
+  DEXmod: "+3"
+  CON: "16"
+  CONmod: "+3"
+  INT: "18"       # background +1, War Caster +1
   INTmod: "+4"
-  DEX: "14"
-  DEXmod: "+2"
   WIS: "14"
   WISmod: "+2"
-  # Mountain Dwarf +2 Strength
-  STR: "15"
-  STRmod: "+2"
-  CHA: "15"
+  CHA: "14"
   CHamod: "+2"
 
 saving_throws:
@@ -105,10 +102,10 @@ saving_throws:
     value: "+2"
     font_size: 6
   ST Dexterity:
-    value: "+2"
+    value: "+3"
     font_size: 6
   ST Constitution:
-    value: "+7"
+    value: "+6"
     proficient: true
     font_size: 6
   ST Intelligence:
@@ -124,7 +121,7 @@ saving_throws:
 
 skills:
   Acrobatics:
-    value: "+2"
+    value: "+3"
     font_size: 6
   Animal:
     value: "+2"
@@ -143,8 +140,7 @@ skills:
     value: "+4"
     font_size: 6
   Insight:
-    value: "+5"
-    proficient: true
+    value: "+2"
     font_size: 6
   Intimidation:
     value: "+2"
@@ -154,7 +150,8 @@ skills:
     proficient: true
     font_size: 6
   Medicine:
-    value: "+2"
+    value: "+5"
+    proficient: true
     font_size: 6
   Nature:
     value: "+4"
@@ -173,10 +170,10 @@ skills:
     value: "+4"
     font_size: 6
   SleightofHand:
-    value: "+2"
+    value: "+3"
     font_size: 6
   Stealth:
-    value: "+2"
+    value: "+3"
     font_size: 6
   Survival:
     value: "+2"
@@ -184,13 +181,14 @@ skills:
 
 combat_and_health:
   AC: "18"
-  Initiative: "+2"
-  # Dwarves base walking speed 25'
-  Speed: "25"
-  #           1d8 + CON mod per artificer level after 1st
-  # Level 1: (  8 + 4  )        = 12
-  # Level 5: (  5 + 4  )  x  4  = 36 +
-  #                             = 48
+  Initiative: "+3"
+  Speed: "30"
+  #           1d8 (or 5) + CON mod per artificer level after 1st
+  # Level 1:   (  8 + 3  )        = 11
+  # Level 5:   (  5 + 3  )  x  4  = 32 +
+  #                               = 43
+  #                               +  5 (Dwarven Toughness)
+  #                               = 48
   HPMax: "48"
   HPCurrent: "48"
   HPTemp: ""
@@ -234,16 +232,13 @@ attacks_and_weapons:
   # Large multi-line description text box at the bottom of attacks section
   AttacksSpellcasting:
     value: |
-      Force Demolisher          1d10 +4 (Force)
-      Thunder Gauntlets         1d8  +4 (Thunder)
-      Lightning Launcher        1d6  +4 (Lightning)
-                                     +1d6 per turn
-      Cure Wounds               1d8  +6
-      Magic Missile             1d4  +1
-      Thunderwave               2d8
-      Faerie Fire
-      (cantrip) Fire Bolt       1d10
-      (reaction) Shield (+5 AC)
+      Force Demolisher      +7   1d10 +4 (Force)
+      Thunder Gauntlets     +7   1d8  +4 (Thunder)
+      Lightning Launcher    +7   1d6  +4 (Lightning)
+                                        +1d6 per turn
+      Magic Missile              1d4  +1
+      Thunderwave                2d8
+      Thorn Whip            +7   2d6     (cantrip) 
     font: "Courier New"
     font_size: 5.5
 
@@ -518,67 +513,57 @@ spells:
   # Artificer spell list = INT mod + 0.5 x Artificer level
   #           level 5    =    4    + 2    = 6
   0: # Cantrips (Level 0) - Max 8 slots
-    - name: "Fire Bolt (1d10, 2d10 @ 5, 3d10 @ 11, 4d10 @ 17)"
-      font_size: 6.5
-    - name: "Guidance (1d4) ability check (C 1m)"
+    - name: "Mage Hand"
       font_size: 6.5
       # class
     - name: "Mending (p259)"
       font_size: 6.5
+    - name: "Thorn Whip (2d6) (p333)"
+      font_size: 6.5
   1: # Level 1 Spells - Max 12 slots
-    # (spell 1)
-    - name: "Cure Wounds (1d8+SPELL) (p230)"
-      font_size: 7.5
     # (spell 2)
-    - name: "(Reaction) Shield (+5 AC) (p275)"
+    - name: "Absorb Elements (Reaction) (1d6)" # Elemental Evil Player's Companion, pg. 150
       font_size: 7.5
-    # (spell 3)
-    - name: "Faerie Fire (C 1m) (p239)"
-      font_size: 7.5
-    - name: "  - 20' cube objects outlined blue, green, violet"
-      font_size: 6
-    - name: "  - 10' radius, creatures DEX saving throw, no invisibility"
-      font_size: 6
-    - name: "  - attack rolls have advantage"
-      font_size: 6
-    # (spell 4)
-    - name: "Grease (p246)"
-      font_size: 7.5
-    # (spell 5)
-    - name: "Sanctuary (p272)"
-      font_size: 7.5
-    # (spell 6)
-    - name: "Detect Magic (p231)"
+    # (spell 1)
+    - name: "Cure Wounds (2d8+SPELL) (p259)"
       font_size: 7.5
     # (subclass)
-    - name: "Magic Missile (1d4+1) (p257)"
+    - name: "Magic Missile (1d4+1) (p295)"
       prepared: true
       font_size: 7.5
+    # (spell 5)
+    - name: "Sanctuary (p313)"
+      font_size: 7.5
     # (subclass)
-    - name: "Thunderwave (2d8) (p282)"
+    - name: "Thunderwave (2d8) (p334)"
       prepared: true
       font_size: 7.5
     - name: "  - 15' cube CON saving throw, push 10' away"
       font_size: 6
   2: # Level 2 Spells - Max 12 slots
-    - name: "Cure Wounds (4d8+SPELL) (p230)"
+    - name: "Blur (C) (p248)"
       font_size: 7.5
       # (spell 7)
-    - name: "Enlarge/Reduce (C 1m) (p237)"
+    - name: "Cure Wounds (4d8+SPELL) (p259)"
+      font_size: 7.5
+    - name: "Heat Metal (C) (2d8) (p284)"
       font_size: 7.5
     # (subclass)
-    - name: "Magic Missile (2d4+1) (p257)"
+    - name: "Magic Missile (2d4+1) (p295)"
       prepared: true
       font_size: 7.5
     # (subclass)
-    - name: "Thunderwave (3d8) (p282)"
+    - name: "Mirror Image (3d8) (p299)"
+      prepared: true
+      font_size: 7.5
+    - name: "Shatter (3d8) (p316)"
       prepared: true
       font_size: 7.5
     # (subclass)
-    - name: "Mirror Image (3d8) (p260)"
+    - name: "Thunderwave (3d8) (p334)"
       prepared: true
       font_size: 7.5
-    - name: "Shatter (3d8) (p275)"
+    - name: "Web (C) (p340)"
       prepared: true
       font_size: 7.5
   # 3: # Level 3 Spells - Max 12 slots
@@ -611,3 +596,21 @@ spells:
   #   - name: "Thunderwave (6d8)"
   #     prepared: true
   #     font_size: 7.5
+  
+  # ------------------------------------
+  # Others
+  # ------------------------------------
+  # # (spell 3)
+  # - name: "Faerie Fire (C 1m) (p271)"
+  #   font_size: 7.5
+  # - name: "  - 20' cube objects outlined blue, green, violet"
+  #   font_size: 6
+  # - name: "  - 10' radius, creatures DEX saving throw, no invisibility"
+  #   font_size: 6
+  # - name: "  - attack rolls have advantage"
+  #   font_size: 6
+  # (spell 7)
+  # - name: "Enlarge/Reduce (C 1m) (p268)"
+  #   font_size: 7.5
+  # - name: "Homunculus Servant (R)"
+  #   font_size: 7.5
